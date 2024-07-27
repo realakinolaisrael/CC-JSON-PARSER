@@ -41,12 +41,9 @@ func lexer(input string) []Token {
 
 // To check if the sequence of tokens represents a valid JSON object.
 func parser(tokens []Token) bool {
-    if len(tokens) == 2 &&
+    return len(tokens) == 2 &&
         tokens[0].Type == TOKEN_LBRACE &&
-        tokens[1].Type == TOKEN_RBRACE {
-        return true
-    }
-    return false
+        tokens[1].Type == TOKEN_RBRACE
 }
 
 func main() {
